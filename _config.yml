@@ -1,4 +1,5 @@
 title: Jekyll Bootstrap
+destination: docs
 sass:
   sass_dir: css
   style:    compressed
