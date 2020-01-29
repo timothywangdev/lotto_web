@@ -1,0 +1,22 @@
+[
+  {
+      "name": "Atlantic Canada",
+      "abbreviation": "AC"
+  },
+  {
+      "name": "British Columbia",
+      "abbreviation": "BC"
+  },
+  {
+      "name": "Ontario",
+      "abbreviation": "ON"
+  },
+  {
+    "name": "Québec",
+    "abbreviation": "QC"
+  },
+  {
+    "name": "Western Canada",
+    "abbreviation": "WC"
+  }
+]

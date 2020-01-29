@@ -2,6 +2,100 @@
 ---
 /* modify Bootstrap variables here */
 
+.card {
+  min-width: 360px;
+  border-radius: 12px !important;
+  margin-bottom: 30px !important;
+  box-shadow: 0 8px 15px rgba(0,0,0,.1);
+}
+
+.card-body {
+  padding: 20px !important;
+}
+
+.card-header:first-child {
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+}
+
 @import 'bootstrap/bootstrap';
 
 /* add additional CSS rules below */
+
+body {
+  background-color: #fafafa !important;
+}
+
+.number {
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+  line-height: 34px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background: white;
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  margin: 3px 3px;
+}
+
+.number-red {
+  border: 2px solid red !important;
+  background: red;
+  color: white
+}
+
+.number-yellow {
+  border: 2px solid #FEC524 !important;
+  background: #FEC524;
+  color: black
+}
+
+.special-number-item {
+  text-align: center;
+}
+
+.lottery-card {
+  background-color: white;
+  padding: 20px;
+  transition: all .2s ease-in-out;
+}
+
+.divider {
+  width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  background-color:rgba(0, 0, 0, 0.12);
+  height:1px;
+}
+
+.state {
+  width: 240px;
+}
+
+.country-container {
+  background-color: white;
+  box-shadow: 0 8px 15px rgba(0,0,0,.1);
+  padding: 20px;
+  transition: all .2s ease-in-out;
+}
+
+.row-start {
+  @include media-breakpoint-up(md) { 
+    justify-content: center !important;
+  }
+  @include media-breakpoint-down(md) { 
+    justify-content: flex-start !important;
+  }
+}
+
+.row-end {
+  @include media-breakpoint-up(md) { 
+    justify-content: center !important;
+  }
+  @include media-breakpoint-down(md) { 
+    justify-content: flex-end !important;
+  }
+}
