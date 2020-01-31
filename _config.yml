@@ -1,5 +1,6 @@
 title: Jekyll Bootstrap
 destination: docs
+google_analytics: UA-145243696-2
 sass:
   sass_dir: css
   style:    compressed
