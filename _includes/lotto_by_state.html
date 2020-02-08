@@ -1,15 +1,16 @@
 <div class="container-fluid">
   <div class='row'>
     <h1 class='m-3'>
-      {% for states in site.data.states %}
-      {% if states.abbr == page.state %}
-        <small> {{ states.name }} Lottery Results</small>
+      {% for state in site.data.states_by_country[page.country_abbr] %}
+      {% if state.abbr == page.state_abbr %}
+        <small> {{ state.name }} Lottery Results</small>
       {% endif %}
       {% endfor %}
     </h1>
   </div>
   <div class='row'>
-    {% for lotto in site.data.lotto_by_states[page.state] %}
+    {% for lotto in site.data.lotto_data[page.country_abbr][page.state_abbr] %}
+    {% assign lotto_index = forloop.index %}
     <div class='col-sm-12 col-md-12 col-lg-12 col-xl-6'>
       <div class="card">
         <div class="card-header" style='background: #cc1414; color: white;'>
@@ -17,6 +18,9 @@
         </div>
         <div class="card-body">
           {% for result in lotto.results %}
+          {% if forloop.index == 4 %}
+          <div class="panel-collapse-past-results collapse" id="collapse-panel-past-draws{{ lotto_index }}">
+          {% endif %}
           <div class='row pt-3 pd-3 pl-2 pr-2'>
             <div class='col-md-3 col-sm-6 col-6'>
               <div class='row row-start'>
@@ -52,7 +56,7 @@
                 {% endfor %}
             </div>
             <div class='row row-end'>
-                <h6>
+                <h6> 
                   <small> {{ result.additional_data }} </small>
                 </h5>
               </div>
@@ -68,12 +72,47 @@
             </div>
             {% endif %}
           </div>
-          {% if forloop.last == false %}
           <div class='row'>
             <div class='divider'></div>
           </div>
-          {% endif %}
           {% endfor %}
+          </div>
+          <div class='row pt-3 pd-3 pl-2 pr-2 justify-content-center panel-heading-past-results'>
+            <h6 class="mb-0 panel-title">
+              <a role="button" data-toggle="collapse" data-target="#collapse-panel-past-draws{{ lotto_index }}" aria-expanded="false" aria-controls="collapseTwo">
+                Past Results
+              </a>
+            </h2>
+          </div>
+          <div class='row'>
+            <div class='divider'></div>
+          </div>
+          <div class='row pt-3 pd-3 pl-2 pr-2 justify-content-center panel-heading-payouts'>
+            <h6 class="mb-0 panel-title">
+              <a role="button" data-toggle="collapse" data-target="#collapse-panel-{{ forloop.index }}" aria-expanded="false" aria-controls="collapseTwo">
+                Payouts
+              </a>
+            </h2>
+          </div>
+          <div class="panel-collapse-payouts collapse" id="collapse-panel-{{ forloop.index }}">
+            {% for payout in lotto.payouts %}
+              <div class='row'>
+                <div class='divider'></div>
+              </div>
+              <div class='row pt-3 pd-3 pl-2 pr-2'>
+                <div class='offset-1 col-4'>
+                  <div class='row justify-content-start'>
+                    <h6> {{ payout.label }} </h6>
+                  </div>
+                </div>
+                <div class='offset-2 col-4'>
+                  <div class='row justify-content-start'>
+                    <h6> {{ payout.value }} </h6>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>

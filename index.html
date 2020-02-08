@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Lottery Results - Powerball, Mega Millions
-tag: [usa lottery,lottery results,powerball,mega millions]
+title: Lottery Results, Jackpots and Numbers | LotteryNumber.net
+tag: [lottery results,lotto,winning numbers,latest,United States lotteries,USA,Canada,UK,Ireland,Germany,Italy,jackpots,prizes]
+meta_description: Latest lottery results (winning numbers) for United States lotteries (USA), Canada, UK, Ireland, Germany, Italy, past lotto numbers, jackpots, prize payouts, odds, including Powerball and Mega Millions.
 ---
 
 <h2 class='m-4'>
@@ -32,22 +33,56 @@ tag: [usa lottery,lottery results,powerball,mega millions]
 </div> -->
 
 <div class="container-fluid country-container">
-  <div class="row align-items-center">
-    <div class='col-1'>
-      <img src="{{site.url}}/assets/images/usa.png" /> 
-    </div>
-    <div class='col-2'>
+  <div class="row align-items-center justify-content-start">
+      <img class='m-3' src="{{site.url}}/assets/images/usa.png" /> 
       <h4> United States </h4>
-    </div>
   </div>
   <div class='row'>
     <div class='divider'></div>
   </div>
   <div class="row justify-content-start">
-    {% for state in site.data.states %}
-    <div class="col">
+    {% for state in site.data.states_by_country['us'] %}
+    <div class="col-6 col-sm-6 col-md-3">
       <a href="/{{state.slug}}-lottery">
-        <h5 class='state'> {{state.name}} </h4>
+        <h7 class='state-list-item'> {{state.name}} </h4>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="container-fluid country-container">
+  <div class="row align-items-center justify-content-start">
+      <img class='m-3' src="{{site.url}}/assets/images/canada.png" /> 
+      <h4> Canada </h4>
+  </div>
+  <div class='row'>
+    <div class='divider'></div>
+  </div>
+  <div class="row justify-content-start">
+    {% for state in site.data.states_by_country['ca'] %}
+    <div class="col-6 col-sm-6 col-md-3">
+      <a href="/{{state.slug}}-lottery">
+        <h7 class='state-list-item'> {{state.name}} </h4>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="container-fluid country-container">
+  <div class="row align-items-center justify-content-start">
+      <img class='m-3' src="{{site.url}}/assets/images/europe.png" height="64px" width="64px" /> 
+      <h4> Europe </h4>
+  </div>
+  <div class='row'>
+    <div class='divider'></div>
+  </div>
+  <div class="row justify-content-start">
+    {% for state in site.data.states_by_country['eu'] %}
+    <div class="col-6 col-sm-6 col-md-3">
+      <a href="/{{state.slug}}-lottery">
+        <h7 class='state-list-item'> {{state.name}} </h4>
       </a>
     </div>
     {% endfor %}

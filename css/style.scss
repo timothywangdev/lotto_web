@@ -19,7 +19,6 @@
 }
 
 @import 'bootstrap/bootstrap';
-
 /* add additional CSS rules below */
 
 body {
@@ -99,3 +98,48 @@ body {
     justify-content: flex-end !important;
   }
 }
+
+.state-list-item {
+  @include media-breakpoint-up(sm) { 
+    font-size: 18px;
+  }
+  @include media-breakpoint-down(sm) { 
+    font-size: 14px;
+    height: 60px !important;
+  }
+}
+
+.panel-heading {
+  padding: 0;
+	border:0;
+}
+
+.panel-title>a, .panel-title>a:active{
+	display:block;
+	padding:15px;
+  font-weight:bold;
+}
+.panel-heading-past-results a:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f106";
+  float: right;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+.panel-heading-past-results.active a:before {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.panel-heading-payouts a:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f106";
+  float: right;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+.panel-heading-payouts.active a:before {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+} 
