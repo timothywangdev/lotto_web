@@ -1,11 +1,7 @@
 <div class="container-fluid">
   <div class='row'>
     <h1 class='m-3'>
-      {% for state in site.data.states_by_country[page.country_abbr] %}
-      {% if state.abbr == page.state_abbr %}
-        <small> {{ state.name }} Lottery Results</small>
-      {% endif %}
-      {% endfor %}
+      {{ page.title }}
     </h1>
   </div>
   <div class='row'>
