@@ -5,9 +5,9 @@
     </h1>
   </div>
   <div class='row'>
-    {% assign lotto = site.data.lotto_data[page.country_abbr][page.state_abbr][lotto.idx] %}
+    {% assign lotto = site.data.lotto_data[page.country_abbr][page.state_abbr][page.lotto_idx] %}
     {% assign lotto_index = 0 %}
-    <div class='col-sm-12 col-md-12 col-lg-12 col-xl-6'>
+    <div class='col-sm-12 col-md-12 col-lg-12 col-xl-12'>
       <div class="card">
         <div class="card-header" style='background: #cc1414; color: white;'>
           <h5 class='font-weight-bold'> {{ lotto.title }} </h3>
