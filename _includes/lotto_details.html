@@ -9,8 +9,8 @@
     </h1>
   </div>
   <div class='row'>
-    {% for lotto in site.data.lotto_data[page.country_abbr][page.state_abbr] %}
-    {% assign lotto_index = forloop.index %}
+    {% assign lotto = site.data.lotto_data[page.country_abbr][page.state_abbr][lotto.idx] %}
+    {% assign lotto_index = 0 %}
     <div class='col-sm-12 col-md-12 col-lg-12 col-xl-6'>
       <div class="card">
         <div class="card-header" style='background: #cc1414; color: white;'>
@@ -116,6 +116,5 @@
         </div>
       </div>
     </div>
-    {% endfor %}
   </div>
 </div>
